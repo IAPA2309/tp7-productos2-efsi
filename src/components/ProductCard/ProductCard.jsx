@@ -7,7 +7,6 @@ function ProductCard({title, brand, price, thumbnail, discountPercentage, id}) {
 
   return (
     <div className="flex-container">
-      <p>{id}</p>
       <Link to={"/products/" + id}>
         <div className="card-product flex-item">
           <div className="img-container">

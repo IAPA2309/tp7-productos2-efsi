@@ -6,3 +6,12 @@
     margin: 50px;
     border: 1px solid #e3e5e8;
 }
+
+.product-title{
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.product-rating{
+    border-radius: 5px;
+}
