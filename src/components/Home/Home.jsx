@@ -1,4 +1,6 @@
 import React from 'react'
+import ProductCard from '../ProductCard/ProductCard';
+import './Home.css'
 
 function Home({ products }) {
 
@@ -34,15 +36,20 @@ function Home({ products }) {
     let productosSeleccionados = seleccionarProductosAleatorios(products, 6);
 
   return (
-    <div>
+    <>
       {products && (
-        <div>
-          {productosSeleccionados.map((product) => {
-            return <div key={product.title}>{product.title}</div>;
-          })}
+        <div className='flex-container'>
+            <p>Podria interesarte...</p>
+            {productosSeleccionados.map((product) => {
+              return (
+                  <>
+                      <ProductCard key={product.id} title={product.title} brand={product.brand} thumbnail={product.thumbnail} price={product.price} discountPercentage={product.discountPercentage}/>
+                  </>
+              );
+            })}
         </div>
       )}
-    </div>
+    </>
   );
 }
 
