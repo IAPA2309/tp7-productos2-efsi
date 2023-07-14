@@ -2,10 +2,13 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import './ProductCard.css'
 
-function ProductCard({title, brand, price, thumbnail, discountPercentage}) {
+
+function ProductCard({title, brand, price, thumbnail, discountPercentage, id}) {
+
   return (
     <div className="flex-container">
-      <Link to="/products/:productId">
+      <p>{id}</p>
+      <Link to={"/products/" + id}>
         <div className="card-product flex-item">
           <div className="img-container">
             <img src={thumbnail} alt="imagen Portada"></img>
