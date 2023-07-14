@@ -39,12 +39,12 @@ function Home({ products }) {
     <>
       {products && (
         <div className='flex-container'>
-            <p>Podria interesarte...</p>
+            <h2 className='titulo'>Podria interesarte...</h2>
             {productosSeleccionados.map((product) => {
               return (
-                  <>
-                      <ProductCard key={product.id} title={product.title} brand={product.brand} thumbnail={product.thumbnail} price={product.price} discountPercentage={product.discountPercentage}/>
-                  </>
+                <>
+                    <ProductCard key={product.id} title={product.title} brand={product.brand} thumbnail={product.thumbnail} price={product.price} discountPercentage={product.discountPercentage}/>
+                </>
               );
             })}
         </div>

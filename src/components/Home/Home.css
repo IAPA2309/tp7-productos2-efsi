@@ -3,3 +3,9 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.titulo{
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
