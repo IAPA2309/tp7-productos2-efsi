@@ -35,8 +35,10 @@ function Products() {
               <p>No image available</p>
             )}
           </div>
-          <div>
+          <div className='product-info'>
             <p className="product-title">{productToShow.title}</p>
+            <p className='product-category'>{productToShow.category}</p>
+            <p>{productToShow.brand}</p>
             <div className='product-rating'>
               <Rating
                 name="half-rating-read"
@@ -49,12 +51,12 @@ function Products() {
               />
               <p className="product-rating">({productToShow.rating})</p>
             </div>
-            <p>{productToShow.category}</p>
+            <div className='product-price'>
+              <p className='product-price-pricing'>${productToShow.price}</p>
+              <p className='product-price-discount'>{productToShow.discountPercentage}% OFF</p>
+            </div>
             <p>{productToShow.description}</p>
-            <p>{productToShow.discountPercentage}</p>
-            <p>{productToShow.price}</p>
-            <p>{productToShow.stock}</p>
-            <p>{productToShow.brand}</p>
+            <p className='product-stock'>{productToShow.stock} disponibles</p>
             <button className="btn-buy">Comprar</button>
           </div>
         </div>
