@@ -15,8 +15,6 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(products);
-
   return (
     <div>
       <BrowserRouter>

@@ -16,44 +16,53 @@ function Products() {
       .then((response) => response.json())
       .then((data) => setProductToShow(data))
       .catch((error) => console.log(error))
-      .finally(setLoading(false));
+      .finally(() => setLoading(false));
   }, [params.productId]);
-
-//   brand
-// category
-// description
-// discountPercentage
-// id
-// images
-// price
-// rating
-// stock
-// thumbnail
-// title
 
   return (
     <>
       {!isLoading ? (
-         <div className='product-block'>  
-         <div>
-           <img src={productToShow.images} alt="imagenes"/>
-         </div>
-         <p className='product-title'>{productToShow.title}</p>
-         <Rating name="half-rating-read" Value={productToShow.rating} precision={0.01} readOnly/>
-         <Rating name="half-rating-read" defaultValue={4.54} precision={0.01} readOnly/>
-         <p className='product-rating'>{productToShow.rating}</p>
-         <p>{productToShow.category}</p>
-         <p>{productToShow.description}</p>
-         <p>{productToShow.discountPercentage}</p>
-         <p>{productToShow.price}</p>
-         <p>{productToShow.stock}</p>
-         <p>{productToShow.brand}</p>
-       </div>
-      ) : 
+        <div className="product-block">
+          <div className="product-block-img">
+            {Array.isArray(productToShow.images) &&
+            productToShow.images.length > 0 ? (
+              <img
+                className="product-img"
+                src={productToShow.images[0]}
+                alt="imagenes"
+              />
+            ) : (
+              <p>No image available</p>
+            )}
+          </div>
+          <div>
+            <p className="product-title">{productToShow.title}</p>
+            <div className='product-rating'>
+              <Rating
+                name="half-rating-read"
+                value={productToShow.rating ?? 0}
+                precision={0.1}
+                sx={{
+                  color: '#3483fa',
+                }}
+                readOnly
+              />
+              <p className="product-rating">({productToShow.rating})</p>
+            </div>
+            <p>{productToShow.category}</p>
+            <p>{productToShow.description}</p>
+            <p>{productToShow.discountPercentage}</p>
+            <p>{productToShow.price}</p>
+            <p>{productToShow.stock}</p>
+            <p>{productToShow.brand}</p>
+            <button className="btn-buy">Comprar</button>
+          </div>
+        </div>
+      ) : (
         <h1>Cargando...</h1>
-      } 
+      )}
     </>
-  )
+  );
 }
 
 export default Products

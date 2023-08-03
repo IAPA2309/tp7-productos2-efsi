@@ -5,6 +5,8 @@
     border-radius: 5px;
     margin: 50px;
     border: 1px solid #e3e5e8;
+    width: 1216px;
+    margin: 0 auto;
 }
 
 .product-title{
@@ -13,5 +15,30 @@
 }
 
 .product-rating{
+    display: flex;
+    color: #3483fa;
+}
+
+.product-block-img{
+    width: 25%;
+    margin-right: 2em;
+}
+
+.product-img{
+    width: 100%;
+}
+
+.btn-buy{
     border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #d1cbff;
+    width: 100%;
+    padding: 1em;
+    transition: all 0.2s;
+}
+
+.btn-buy:hover{
+    cursor: pointer;
+    background-color: #9185f0;
 }
