@@ -58,6 +58,7 @@ function Products() {
             <p>{productToShow.description}</p>
             <p className='product-stock'>{productToShow.stock} disponibles</p>
             <button className="btn-buy">Comprar</button>
+            <button className="btn-chart">Agregar al carrito</button>
           </div>
         </div>
       ) : (

@@ -13,6 +13,7 @@
     border: 1px solid #dad6d6;
     padding: 1em;
     border-radius: 6px;
+    width: 100%;
 }
 
 .product-title{
@@ -73,7 +74,6 @@
 
 .btn-buy{
     border-radius: 4px;
-    outline: none;
     border: none;
     background-color: #f2f2f2;
     outline: 2px solid #918f8f;
@@ -83,12 +83,32 @@
     font-weight: 400;
     transition: all 0.1s ease-out;
     margin-top: 5px;
+    margin-bottom: 3px;
 }
 
 .btn-buy:hover{
     cursor: pointer;
-    background-color: #3483fa;
+    background-color: #ff9721;
     color: #f2f2f2;
-    outline: 2px solid #3483fa;
+    outline: 2px solid #f2f2f2;
     outline-offset: 4px;
+}
+
+.btn-chart{
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: 400;
+    transition: all 0.1s ease-out;
+    margin-top: 5px;
+}
+
+.btn-chart:hover{
+    cursor: pointer;
+    background-color: #d2d9e0;
+    color: #4778ff;
 }
