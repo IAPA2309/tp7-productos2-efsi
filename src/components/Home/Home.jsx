@@ -35,8 +35,10 @@ function Home({ products }) {
   return (
     <>
       {products && (
-        <div className="flex-container">
-          <h2 className="titulo">Podria interesarte...</h2>
+        <div className="flex-container recomendations">
+          <div className="titulo">
+            <h1 className="titulo-font">Podria interesarte...</h1>
+          </div>
           {productosSeleccionados.map((product) => {
             return (
               <React.Fragment key={product.id}>

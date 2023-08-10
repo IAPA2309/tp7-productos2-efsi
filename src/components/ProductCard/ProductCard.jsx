@@ -14,8 +14,8 @@ function ProductCard({title, brand, price, thumbnail, discountPercentage, id}) {
           </div>
           <h1 className="card-price">${price}</h1>
           <h1 className="card-discountPercentage">{discountPercentage}% OFF</h1>
-          <p className="truncate">{title}</p>
-          <p>{brand}</p>
+          <p className="truncate card-title">{title}</p>
+          <p className='card-brand'>{brand}</p>
         </div>
       </Link>
     </div>

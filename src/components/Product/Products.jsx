@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Products.css";
-import { Rating } from "@mui/material";
+import { Rating, LinearProgressClassKey, LinearProgress } from "@mui/material";
 
 function Products() {
   const params = useParams();
@@ -43,7 +43,7 @@ function Products() {
                 value={productToShow.rating ?? 0}
                 precision={0.1}
                 sx={{
-                  color: "#3483fa",
+                  color: "#3c46ff",
                 }}
                 readOnly
               />
@@ -62,7 +62,7 @@ function Products() {
           </div>
         </div>
       ) : (
-        <h1>Cargando...</h1>
+        <LinearProgress />
       )}
     </>
   );
