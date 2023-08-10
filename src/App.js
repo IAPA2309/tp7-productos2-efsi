@@ -21,9 +21,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route index element={<Home products={products}/>}></Route>
-            <Route path="*" element={<h1>404</h1>}></Route>
             <Route path="/products/:productId" element={<Products products={products}/>}></Route>
-            <Route path="/home" element={<Navigate to="/" />} />
+            <Route path="/home" element={<Navigate to="/"/>} />
+            <Route path="*" element={<h1>404</h1>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

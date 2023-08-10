@@ -1,15 +1,13 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import './Products.css'
-import { Rating } from '@mui/material';
+import React from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./Products.css";
+import { Rating } from "@mui/material";
 
 function Products() {
-
   const params = useParams();
   const [productToShow, setProductToShow] = useState({});
   const [isLoading, setLoading] = useState(true);
-
 
   useEffect(() => {
     fetch("https://dummyjson.com/products/" + params.productId)
@@ -35,28 +33,30 @@ function Products() {
               <p>No image available</p>
             )}
           </div>
-          <div className='product-info'>
+          <div className="product-info">
             <p className="product-title">{productToShow.title}</p>
-            <p className='product-category'>{productToShow.category}</p>
+            <p className="product-category">{productToShow.category}</p>
             <p>{productToShow.brand}</p>
-            <div className='product-rating'>
+            <div className="product-rating">
               <Rating
                 name="half-rating-read"
                 value={productToShow.rating ?? 0}
                 precision={0.1}
                 sx={{
-                  color: '#3483fa',
+                  color: "#3483fa",
                 }}
                 readOnly
               />
               <p className="product-rating">({productToShow.rating})</p>
             </div>
-            <div className='product-price'>
-              <p className='product-price-pricing'>${productToShow.price}</p>
-              <p className='product-price-discount'>{productToShow.discountPercentage}% OFF</p>
+            <div className="product-price">
+              <p className="product-price-pricing">${productToShow.price}</p>
+              <p className="product-price-discount">
+                {productToShow.discountPercentage}% OFF
+              </p>
             </div>
             <p>{productToShow.description}</p>
-            <p className='product-stock'>{productToShow.stock} disponibles</p>
+            <p className="product-stock">{productToShow.stock} disponibles</p>
             <button className="btn-buy">Comprar</button>
             <button className="btn-chart">Agregar al carrito</button>
           </div>
@@ -68,4 +68,4 @@ function Products() {
   );
 }
 
-export default Products
+export default Products;

@@ -1,11 +1,11 @@
-import React from 'react'
-import { Outlet, Link } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
   return (
     <div>
-      <div className='navbar'>
+      <div className="navbar sticky">
         <nav>
           <Link to="/home">Inicio</Link>
           <Link to="/contact">Contacto</Link>
@@ -17,4 +17,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;

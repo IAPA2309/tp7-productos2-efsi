@@ -1,4 +1,13 @@
-.navbar{
-    padding: 10px;
-    background-color: red;
+.navbar {
+  background-color: var(--dark-bg-color);
+  color: #f2f2f2;
+  padding: 2em;
+  position: sticky;
+  top: 0;
+}
+
+.navbar a {
+  color: #f2f2f2;
+  text-decoration: none;
+  margin-right: 15px;
 }
