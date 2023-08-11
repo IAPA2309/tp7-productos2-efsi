@@ -1,25 +1,41 @@
-.input-search{
-    outline: none;
-    border: none;
-    width: 600px;
-    padding: 10px;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    font-size: 20px;
-    background-color: #fbf8ff;
+.input-search {
+  outline: none;
+  border: none;
+  width: 500px;
+  padding: 10px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-size: 20px;
+  background-color: #fbf8ff;
 }
 
-.btn-search{
-    background-color: #fbf8ff;
-    color:#3c46ff;
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 20px;
-    border-top-right-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
+.btn-search {
+  background-color: #fbf8ff;
+  color: #3c46ff;
+  border: none;
+  outline: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
 }
-.btn-search:hover{
-    color: #fbf8ff;
-    background-color:#0000ff;
+.btn-search:hover {
+  color: #fbf8ff;
+  background-color: #0000ff;
+}
+
+.btn-search::before {
+  content: "";
+  width: 100%;
+  border-left: solid 1px #b8b8b8;
+  position: relative;
+  left: -15px;
+  z-index: 0;
+}
+
+.btn-search:hover::before {
+  display: none;
 }

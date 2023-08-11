@@ -13,9 +13,9 @@
 }
 
 .product-info {
-  border: 1px solid #dad6d6;
+  border-left: 1px solid #dad6d6;
   padding: 1em;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   width: 100%;
 }
 
@@ -34,12 +34,13 @@
 }
 
 .product-block-img {
-  width: 25%;
+  width: 100%;
   margin-right: 2em;
 }
 
 .product-img {
   width: 100%;
+  height: 100%;
 }
 
 .product-price {

@@ -1,13 +1,18 @@
-import React from 'react'
-import './SearchInput.css'
+import React from "react";
+import "./SearchInput.css";
+import SearchIcon from "@mui/icons-material/Search";
 
 function SearchInput() {
   return (
     <div>
-        <input placeholder='Buscar...' className='input-search'/>
-        <button className='btn-search'>Buscar</button>
+      <form action="">
+        <input placeholder="Buscar..." className="input-search" />
+        <button type="submit" className="btn-search">
+          <SearchIcon sx={{ fontSize: 21 }} />
+        </button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default SearchInput
+export default SearchInput;

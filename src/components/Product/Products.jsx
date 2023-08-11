@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Products.css";
-import { Rating, LinearProgressClassKey, LinearProgress } from "@mui/material";
+import { Rating, LinearProgress } from "@mui/material";
 
 function Products() {
   const params = useParams();
