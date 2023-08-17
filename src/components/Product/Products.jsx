@@ -26,14 +26,14 @@ function Products() {
     <>
       {!isLoading ? (
         <div>
-          <div>
+          <div className="product-block">
             <button className="bnt-back" onClick={goBack}>
               Volver
             </button>
-            <span style={{fontSize: 20, marginRight: 5}}>&#62; </span>
+            <span style={{fontSize: 20, marginRight: 5, alignSelf: "center"}}>&#62; </span>
             <span className="product-category">{productToShow.category}</span>
           </div>
-          <div className="product-block">
+          <div className="product-block" style={{marginTop: 0}}>
             <div className="product-block-img">
               {Array.isArray(productToShow.images) &&
               productToShow.images.length > 0 ? (
@@ -47,8 +47,8 @@ function Products() {
               )}
             </div>
             <div className="product-info">
-              <span className="product-title">{productToShow.title}</span>
               <span className="product-brand">{productToShow.brand}</span>
+              <span className="product-title">{productToShow.title}</span>
               <div className="product-rating">
                 <Rating
                   name="half-rating-read"
