@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./Products.css";
 import { Rating, LinearProgress } from "@mui/material";
 
@@ -17,48 +17,62 @@ function Products() {
       .finally(() => setLoading(false));
   }, [params.productId]);
 
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       {!isLoading ? (
-        <div className="product-block">
-          <div className="product-block-img">
-            {Array.isArray(productToShow.images) &&
-            productToShow.images.length > 0 ? (
-              <img
-                className="product-img"
-                src={productToShow.images[0]}
-                alt="imagenes"
-              />
-            ) : (
-              <p>No image available</p>
-            )}
+        <div>
+          <div>
+            <button className="bnt-back" onClick={goBack}>
+              Volver
+            </button>
+            <span style={{fontSize: 20, marginRight: 5}}>&#62; </span>
+            <span className="product-category">{productToShow.category}</span>
           </div>
-          <div className="product-info">
-            <p className="product-title">{productToShow.title}</p>
-            <p className="product-category">{productToShow.category}</p>
-            <p>{productToShow.brand}</p>
-            <div className="product-rating">
-              <Rating
-                name="half-rating-read"
-                value={productToShow.rating ?? 0}
-                precision={0.1}
-                sx={{
-                  color: "#3c46ff",
-                }}
-                readOnly
-              />
-              <p className="product-rating">({productToShow.rating})</p>
+          <div className="product-block">
+            <div className="product-block-img">
+              {Array.isArray(productToShow.images) &&
+              productToShow.images.length > 0 ? (
+                <img
+                  className="product-img"
+                  src={productToShow.images[0]}
+                  alt="imagenes"
+                />
+              ) : (
+                <p>No image available</p>
+              )}
             </div>
-            <div className="product-price">
-              <p className="product-price-pricing">${productToShow.price}</p>
-              <p className="product-price-discount">
-                {productToShow.discountPercentage}% OFF
-              </p>
+            <div className="product-info">
+              <span className="product-title">{productToShow.title}</span>
+              <span className="product-brand">{productToShow.brand}</span>
+              <div className="product-rating">
+                <Rating
+                  name="half-rating-read"
+                  value={productToShow.rating ?? 0}
+                  precision={0.1}
+                  sx={{
+                    color: "#3c46ff",
+                    fontSize: "30px",
+                  }}
+                  readOnly
+                />
+                <span className="product-rating">({productToShow.rating})</span>
+              </div>
+              <div className="product-price">
+                <p className="product-price-pricing">${productToShow.price}</p>
+                <p className="product-price-discount">
+                  {productToShow.discountPercentage}% OFF
+                </p>
+              </div>
+              <p className="product-description">{productToShow.description}</p>
+              <p className="product-stock">{productToShow.stock} disponibles</p>
+              <button className="btn-buy">Comprar</button>
+              <button className="btn-chart">Agregar al carrito</button>
             </div>
-            <p>{productToShow.description}</p>
-            <p className="product-stock">{productToShow.stock} disponibles</p>
-            <button className="btn-buy">Comprar</button>
-            <button className="btn-chart">Agregar al carrito</button>
           </div>
         </div>
       ) : (

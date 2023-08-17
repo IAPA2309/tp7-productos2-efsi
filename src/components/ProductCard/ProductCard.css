@@ -21,13 +21,13 @@
 }
 
 .card-product{
-    font-size: 10px;
+    font-size: 12px;
     overflow: hidden;
-    transition: 0.3s all ease-in-out;
+    transition: 200ms all ease-in-out;
 }
 
 .card-product > p{
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -48,7 +48,7 @@ img{
 
 .img-container img{
     width: 100%;
-    transition: 0.5s transform ease-in-out;
+    transition: 0.3s transform ease-in-out;
 }
 
 .card-product:hover img{
@@ -56,7 +56,7 @@ img{
 }
 
 .card-product:hover{
-    background: rgba(2, 136, 245, 0.175);
+    background: rgb(245, 245, 245);
     border: 1px solid #ababab;
 
 }
@@ -73,6 +73,7 @@ img{
 
 .card-brand{
     color: #898989;
+    font-size: 16px !important;
 }
 
 .card-discountPercentage{
