@@ -20,13 +20,13 @@ function Navbar() {
   return (
     <div>
       <div className={scrolled ? "navbar sticky floating-shadow" : "navbar sticky"}>
+        <SearchInput/>
         <nav className="nav-container">
           <Link to="/home">Inicio</Link>
           <Link to="/contact">Contacto</Link>
           <Link to="/chart">Carrito</Link>
           <Link to="/products">Productos</Link>
         </nav>
-        <SearchInput/>
       </div>
       <Outlet />
     </div>

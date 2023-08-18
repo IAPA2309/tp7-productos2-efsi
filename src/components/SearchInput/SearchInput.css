@@ -4,7 +4,8 @@
   font-size: 20px;
   background-color: #fbf8ff;
   padding-left: 20px;
-  width: 85%;
+  width: 500px;
+  border-radius: 40px;
 }
 
 .form-search{
@@ -14,11 +15,11 @@
   width: 100%;
   overflow: hidden;
   justify-content: space-between;
-  border: 1px solid #d4d4d4;
+  outline: 1px solid #d4d4d4;
 }
 
-.form-search > input:focus{
-  border: 1px solid black;
+.form-search:has(input:focus){
+  outline: 1px solid black;
 }
 
 .btn-search {
@@ -27,8 +28,7 @@
   border: none;
   outline: none;
   margin: 5px;
-  font-size: 20px;
-  border-radius: 100%;
+  border-radius: 10%;
   padding: 5px 15px 5px 15px;
 }
 .btn-search:hover {
