@@ -3,21 +3,23 @@
   /* background-color: var(--dark-bg-color); */
   background-color: #fbf8ff;
   border: 1px solid #d4d4d4;
-  padding: 2em;
+  padding: 0.8em 0;
   position: sticky;
   top: 0;
   z-index: 100000;
   width: 100%;
-  align-items: center;
-  gap: 15px;
+  justify-content: center;
 }
 
 .nav-container{
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  width: 350px;
+  width: 100%;
+}
+
+.navbar-grid-container{
+  display: grid;
+  gap: 15px;
 }
 
 .navbar a {
@@ -27,6 +29,7 @@
   position: relative;
   padding: 0.2em 0;
   padding-bottom: 9px;
+  font-weight: 500;
 }
 
 .nav-container > a:hover{
@@ -39,7 +42,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 0.1em;
+  height: 0.15em;
   background-color: black;
   opacity: 0;
   transition: opacity 300ms, transform 300ms;

@@ -19,14 +19,18 @@ function Navbar() {
 
   return (
     <div>
-      <div className={scrolled ? "navbar sticky floating-shadow" : "navbar sticky"}>
-        <SearchInput/>
-        <nav className="nav-container">
-          <Link to="/home">Inicio</Link>
-          <Link to="/contact">Contacto</Link>
-          <Link to="/chart">Carrito</Link>
-          <Link to="/products">Productos</Link>
-        </nav>
+      <div
+        className={scrolled ? "navbar sticky floating-shadow" : "navbar sticky"}
+      >
+        <div className="navbar-grid-container">
+          <SearchInput />
+          <nav className="nav-container">
+            <Link to="/home">Inicio</Link>
+            <Link to="/products">Productos</Link>
+            <Link to="/contact">Contacto</Link>
+            <Link to="/chart">Carrito</Link>
+          </nav>
+        </div>
       </div>
       <Outlet />
     </div>

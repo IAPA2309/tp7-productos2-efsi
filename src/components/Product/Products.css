@@ -91,7 +91,7 @@
 
 .product-rating {
   display: flex;
-  color: #3c46ff;
+  color: #222222;
   gap: 5px;
   align-items: center;
   font-size: 20px;
@@ -130,6 +130,10 @@
   font-weight: 500;
 }
 
+.product-price-pricing-original{
+  color: #918f8f;
+  text-decoration: line-through;
+}
 
 .product-stock {
   margin-top: 10px;
@@ -155,40 +159,45 @@
 .btn-buy {
   border-radius: 6px;
   border: none;
-  background-color: #3c46ff;
+  background-color: #FF385C;
   color: #f2f2f2;
-  outline: 2px solid #3c46ff;
+  outline: 2px solid #FF385C;
   width: 100%;
   padding: 1em;
   font-size: 1em;
   font-weight: 600;
-  transition: all 0.1s ease-out;
   margin-top: 5px;
   margin-bottom: 3px;
+  transition: all 0.11s ease-in-out;
 }
 
 .btn-buy:hover {
   cursor: pointer;
   background-color: #0000ff;
-  outline: 2px solid #3c46ff;
+  outline: 2px solid #FF385C;
   outline-offset: 4px;
+}
+
+.btn-buy:active {
+  background-color: #f8153f;
+  transform: scale(.99);
 }
 
 .btn-chart {
   border-radius: 6px;
   outline: none;
   border: none;
-  background-color: rgba(65, 137, 230, 0.15);
+  background-color: rgba(254, 105, 147, 0.15);
   width: 100%;
   padding: 1em;
   font-size: 1em;
   font-weight: 400;
   transition: all 0.1s ease-out;
   margin-top: 5px;
-  color: #4778ff;
+  color: #fb4768;
 }
 
 .btn-chart:hover {
   cursor: pointer;
-  background-color: rgba(65, 137, 230, 0.2);
+  background-color: rgba(211, 86, 121, 0.15);
 }

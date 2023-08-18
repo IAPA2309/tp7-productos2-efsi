@@ -3,9 +3,8 @@
   border: none;
   font-size: 20px;
   background-color: #fbf8ff;
-  padding-left: 20px;
-  width: 500px;
-  border-radius: 40px;
+  width: 100%;
+  margin-left: 10px;
 }
 
 .form-search{
@@ -16,6 +15,7 @@
   overflow: hidden;
   justify-content: space-between;
   outline: 1px solid #d4d4d4;
+  padding: 6px 8px;
 }
 
 .form-search:has(input:focus){
@@ -23,19 +23,30 @@
 }
 
 .btn-search {
-  background-color: #fbf8ff;
-  color: #3c46ff;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  /* background-color: #fbf8ff; */
+  /* color: #3c46ff; */
+  background-color: #FF385C;
+  color: #fbf8ff;
   border: none;
   outline: none;
-  margin: 5px;
-  border-radius: 10%;
-  padding: 5px 15px 5px 15px;
-}
-.btn-search:hover {
-  color: #fbf8ff;
-  background-color: #0000ff;
+  /* border-radius: 40px; */
+  /* padding: 10px 15px 10px 15px; */
+  border-radius: 40px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: transform 0.15s ease-out;
 }
 
-.btn-search:hover::before {
-  display: none;
+.btn-search:hover {
+  color: #fbf8ff;
+  background: rgb(255, 0, 56);
+  background: linear-gradient(149deg, rgba(255, 0, 56, 1) 0%, rgba(255, 0, 159, 1) 32%, rgba(255, 0, 56, 1) 100%);
+}
+
+.btn-search:active {
+  transform: scale(.9);
 }

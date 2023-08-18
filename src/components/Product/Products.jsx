@@ -22,6 +22,15 @@ function Products() {
     navigate(-1);
   };
 
+  function calcularValorOriginal(valorDescontado, porcentajeDescuento) {
+    const valorOriginal = valorDescontado / (1 - porcentajeDescuento / 100);
+    return Math.round(valorOriginal);
+  }
+
+  if(!isLoading && productToShow.discountPercentage > 0){
+    var valorOriginal = calcularValorOriginal(productToShow.price, productToShow.discountPercentage);
+  }
+
   return (
     <>
       {!isLoading ? (
@@ -55,7 +64,7 @@ function Products() {
                   value={productToShow.rating ?? 0}
                   precision={0.1}
                   sx={{
-                    color: "#3c46ff",
+                    color: "#222222",
                     fontSize: "30px",
                   }}
                   readOnly
@@ -63,6 +72,7 @@ function Products() {
                 <span className="product-rating">({productToShow.rating})</span>
               </div>
               <div className="product-price">
+                <p className="product-price-pricing-original">${valorOriginal}</p>
                 <p className="product-price-pricing">${productToShow.price}</p>
                 <p className="product-price-discount">
                   {productToShow.discountPercentage}% OFF
