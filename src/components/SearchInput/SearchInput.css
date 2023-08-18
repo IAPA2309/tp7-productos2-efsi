@@ -11,9 +11,14 @@
   display: flex;
   background-color: #fbf8ff;
   border-radius: 40px;
-  width: 25%;
+  width: 100%;
   overflow: hidden;
   justify-content: space-between;
+  border: 1px solid #d4d4d4;
+}
+
+.form-search > input:focus{
+  border: 1px solid black;
 }
 
 .btn-search {

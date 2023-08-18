@@ -30,7 +30,7 @@ function Products() {
             <button className="bnt-back" onClick={goBack}>
               Volver
             </button>
-            <span style={{fontSize: 20, marginRight: 5, alignSelf: "center"}}>&#62; </span>
+            <span style={{fontSize: 18, marginRight: 5, alignSelf: "center"}}>&#62; </span>
             <span className="product-category">{productToShow.category}</span>
           </div>
           <div className="product-block" style={{marginTop: 0}}>

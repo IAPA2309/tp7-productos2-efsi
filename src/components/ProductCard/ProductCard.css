@@ -79,11 +79,11 @@ img{
 .card-discountPercentage{
     display: inline;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 8px;
     margin-left: 5px;
     color: rgb(6, 191, 58);
     background-color: rgba(32, 221, 86, 0.244);
-    padding: 1px;
+    padding: 2px;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 4px;
