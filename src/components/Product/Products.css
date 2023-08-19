@@ -131,6 +131,7 @@
 }
 
 .product-price-pricing-original{
+  font-size: 1.5em;
   color: #918f8f;
   text-decoration: line-through;
 }
@@ -159,9 +160,9 @@
 .btn-buy {
   border-radius: 6px;
   border: none;
-  background-color: #FF385C;
+  background-color: #e82153;
   color: #f2f2f2;
-  outline: 2px solid #FF385C;
+  outline: 2px solid #e82153;
   width: 100%;
   padding: 1em;
   font-size: 1em;
@@ -173,13 +174,12 @@
 
 .btn-buy:hover {
   cursor: pointer;
-  background-color: #0000ff;
+  background-color: #f8153f;
   outline: 2px solid #FF385C;
   outline-offset: 4px;
 }
 
 .btn-buy:active {
-  background-color: #f8153f;
   transform: scale(.99);
 }
 

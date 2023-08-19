@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as YourSvg } from './404 Error-rafiki.svg'
+import { ReactComponent as YourSvg } from './ErrorImage.svg'
 import FlagTwoToneIcon from "@mui/icons-material/FlagTwoTone";
 import './NotFound.css'
 
