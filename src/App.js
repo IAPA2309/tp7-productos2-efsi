@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Product/Products";
 import NotFound from "./components/404Error/NotFound";
 import Footer from "./components/Footer/Footer";
+import ProductPage from "./components/ProductPage/ProductPage";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const [products, setProducts] = useState([{}]);
@@ -24,15 +26,20 @@ function App() {
           <Route path="/" element={<Navbar />}>
             <Route index element={<Home products={products} />}></Route>
             <Route
+              path="/products"
+              element={<ProductPage />}
+            ></Route>
+            <Route
               path="/products/:productId"
               element={<Products products={products} />}
             ></Route>
             <Route path="/home" element={<Navigate to="/" />} />
+            <Route path="/contact" element={<Contact />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Route>
         </Routes>
 
-        <Footer/>
+        <Footer />
       </div>
     </BrowserRouter>
   );

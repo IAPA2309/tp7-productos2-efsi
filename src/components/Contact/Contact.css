@@ -1,0 +1,69 @@
+.form-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.sumbit-form-btn{
+    border-radius: 6px;
+    border: none;
+    background-color: #e82153;
+    color: #f2f2f2;
+    width: 100%;
+    padding: .7em;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: all 0.15s ease-in;
+}
+
+.sumbit-form-btn:hover{
+    cursor: pointer;
+    background-color: #f8153f;
+}
+.sumbit-form-btn:active{
+    transform: scale(.95);
+}
+
+.form-contact-section{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.form-contact-input{
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    outline: none;
+    outline: 1px solid #d4d4d4;
+    background-color: #fbf8ff;
+    border: none;
+    font-size: 1em;
+}
+
+.form-contact-input:focus{
+    outline: 2px solid black;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.form-contact-label{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.form-help{
+    display: flex;
+    border-radius: 12px;
+    border: 1px solid #d4d4d4;
+    gap: 10px;
+    width: 500px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7px;
+    margin-bottom: 0;
+}

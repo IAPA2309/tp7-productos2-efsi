@@ -1,0 +1,28 @@
+.filter-container{
+    display: flex;
+    border: 1px solid #d4d4d4;
+    border-radius: 12px;
+    width: 700px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 80px;
+    margin: 20px auto;
+}
+
+select{
+    outline: none;
+    border: none;
+    background-color: #fbf8ff;
+    outline: 1px solid #d4d4d4;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+select:hover{
+    cursor: pointer;
+}
+
+select:focus{
+    outline: 1px solid black;
+}
