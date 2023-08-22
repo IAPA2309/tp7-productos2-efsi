@@ -53,3 +53,14 @@
     display: flex;
     justify-content: space-between;
 }
+
+.footer-section-extra-LP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-section-extra-LP-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

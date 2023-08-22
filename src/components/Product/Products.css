@@ -201,3 +201,8 @@
   cursor: pointer;
   background-color: rgba(211, 86, 121, 0.15);
 }
+
+.sticky-follow{
+  position: sticky;
+  top: 150px;
+}

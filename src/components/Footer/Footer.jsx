@@ -1,6 +1,8 @@
 import React from 'react'
 import './Footer.css'
 import { Outlet } from "react-router-dom";
+import LanguageIcon from "@mui/icons-material/Language";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 function Footer() {
   return (
@@ -54,7 +56,16 @@ function Footer() {
               <div>
                 <p>© Iñaki P, Bautista S.</p>
               </div>
-              <div>$ USD</div>
+              <div className="footer-section-extra-LP" style={{ gap: 20 }}>
+                <div className="footer-section-extra-LP" style={{ gap: 5 }}>
+                  <LanguageIcon />
+                  <span className="footer-section-extra-LP-link">Español</span>
+                </div>
+                <div className="footer-section-extra-LP">
+                  <AttachMoneyIcon />
+                  <span className="footer-section-extra-LP-link">USD</span>
+                </div>
+              </div>
             </div>
           </section>
         </div>
