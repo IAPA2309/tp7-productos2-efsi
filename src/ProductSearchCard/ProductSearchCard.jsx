@@ -11,6 +11,7 @@ function ProductSearchCard({
   discountPercentage,
   id,
 }) {
+
   return (
     <div className="search-flex-container">
       <Link to={"/products/" + id}>

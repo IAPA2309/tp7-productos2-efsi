@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import './ProductPage.css'
-// import SearchInput from '../SearchInput/SearchInput';
 import { LinearProgress } from "@mui/material";
 import TuneIcon from "@mui/icons-material/Tune";
 import ProductSearchCard from '../../ProductSearchCard/ProductSearchCard';
+import { useLocation } from "react-router-dom";
+import HelpTwoToneIcon from "@mui/icons-material/HelpTwoTone";
 
 function ProductPage() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searchValue = searchParams.get("search");
 
   useEffect(() => {
     fetch("https://dummyjson.com/products/categories")
@@ -19,12 +25,20 @@ function ProductPage() {
 
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=18&skip=0")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products);
-      });;
-  }, []);
+    if (searchValue) {
+      fetch(`https://dummyjson.com/products/search?q=${searchValue}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setFilteredProducts(data.products);
+        });
+    } else {
+      fetch("https://dummyjson.com/products?limit=18&skip=0")
+        .then((res) => res.json())
+        .then((data) => {
+          setProducts(data.products);
+        });
+    }
+  }, [searchValue]);
 
   return (
     <div>
@@ -36,46 +50,36 @@ function ProductPage() {
             <div className="filter-filters">
               <TuneIcon sx={{ color: "#e82153" }} />
               <p className="filter-text">Selecctionar filtros</p>
-              {/* <FormControl variant="standard" sx={{ minWidth: 120, marginLeft: 2}}>
-                  <InputLabel id="demo-simple-select-standard-label">
-                    Categorias
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-standard-label"
-                    id="demo-simple-select-standard"
-                    // value={age}
-                    // onChange={handleChange}
-                    // label="Categorias"
-                  >
-                    <MenuItem value="">
-                      <em style={{fontWeight: 600}}>Ninguna</em>
-                    </MenuItem>
-                    {categories.map((category, index) =>(
-                        <MenuItem value={category}>{category}</MenuItem>
-                    ))}
-                  </Select>
-                </FormControl> */}
             </div>
             <div></div>
           </div>
           <div className="products-search-container">
             {products && (
               <div className="products-search-flex-container">
-                {products.map((product) => {
-                  return (
-                    <React.Fragment key={product.id}>
-                      <ProductSearchCard
-                        id={product.id}
-                        title={product.title}
-                        brand={product.brand}
-                        category={product.category}
-                        thumbnail={product.thumbnail}
-                        price={product.price}
-                        discountPercentage={product.discountPercentage}
-                      />
-                    </React.Fragment>
-                  );
-                })}
+                {searchValue && filteredProducts.length === 0 ? (
+                  <div className="form-help">
+                    <p style={{ width: 350 }}>
+                      No se encontraron artículos para "
+                      <span style={{ fontWeight: 700 }}>{searchValue}</span>". ¿Esta escrito correctamente?
+                    </p>
+                    <HelpTwoToneIcon
+                      sx={{ color: "#e82153", fontSize: 40 }}
+                    />
+                  </div>
+                ) : (
+                  (searchValue ? filteredProducts : products).map((product) => (
+                    <ProductSearchCard
+                      key={product.id}
+                      id={product.id}
+                      title={product.title}
+                      brand={product.brand}
+                      category={product.category}
+                      thumbnail={product.thumbnail}
+                      price={product.price}
+                      discountPercentage={product.discountPercentage}
+                    />
+                  ))
+                )}
               </div>
             )}
           </div>
