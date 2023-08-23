@@ -5,24 +5,16 @@ import TuneIcon from "@mui/icons-material/Tune";
 import ProductSearchCard from '../../ProductSearchCard/ProductSearchCard';
 import { useLocation } from "react-router-dom";
 import HelpTwoToneIcon from "@mui/icons-material/HelpTwoTone";
+import CategorySelector from '../CategorySelector/CategorySelector';
 
 function ProductPage() {
-  const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchValue = searchParams.get("search");
-
-  useEffect(() => {
-    fetch("https://dummyjson.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
-      });
-  }, []);
-
 
   useEffect(() => {
     if (searchValue) {
@@ -32,7 +24,7 @@ function ProductPage() {
           setFilteredProducts(data.products);
         });
     } else {
-      fetch("https://dummyjson.com/products?limit=18&skip=0")
+      fetch("https://dummyjson.com/products?limit=0&skip=0")
         .then((res) => res.json())
         .then((data) => {
           setProducts(data.products);
@@ -40,9 +32,27 @@ function ProductPage() {
     }
   }, [searchValue]);
 
+  useEffect(() => {
+    if (selectedCategory !== "") {
+      fetch(`https://dummyjson.com/products/category/${selectedCategory}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setProducts(data.products);
+        });
+    } else {
+      fetch("https://dummyjson.com/products?limit=0&skip=0")
+        .then((res) => res.json())
+        .then((data) => {
+          setProducts(data.products);
+        });
+    }
+  }, [selectedCategory]);
+
+  console.log(selectedCategory);
+
   return (
     <div>
-      {categories.length === 0 ? (
+      {products === undefined ? (
         <LinearProgress />
       ) : (
         <>
@@ -50,6 +60,13 @@ function ProductPage() {
             <div className="filter-filters">
               <TuneIcon sx={{ color: "#e82153" }} />
               <p className="filter-text">Selecctionar filtros</p>
+            </div>
+            <div className="">
+              {/* <p className="">Categorias</p> */}
+              <CategorySelector
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+              />
             </div>
             <div></div>
           </div>
@@ -60,11 +77,10 @@ function ProductPage() {
                   <div className="form-help">
                     <p style={{ width: 350 }}>
                       No se encontraron artículos para "
-                      <span style={{ fontWeight: 700 }}>{searchValue}</span>". ¿Esta escrito correctamente?
+                      <span style={{ fontWeight: 700 }}>{searchValue}</span>".
+                      ¿Esta escrito correctamente?
                     </p>
-                    <HelpTwoToneIcon
-                      sx={{ color: "#e82153", fontSize: 40 }}
-                    />
+                    <HelpTwoToneIcon sx={{ color: "#e82153", fontSize: 40 }} />
                   </div>
                 ) : (
                   (searchValue ? filteredProducts : products).map((product) => (
@@ -77,6 +93,7 @@ function ProductPage() {
                       thumbnail={product.thumbnail}
                       price={product.price}
                       discountPercentage={product.discountPercentage}
+                      rating={product.rating}
                     />
                   ))
                 )}
