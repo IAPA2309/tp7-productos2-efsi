@@ -1,6 +1,8 @@
 import React from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import "./Home.css";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 function Home({ products }) {
   const seleccionarProductosAleatorios = (productos, cantidad) => {
@@ -32,28 +34,54 @@ function Home({ products }) {
 
   let productosSeleccionados = seleccionarProductosAleatorios(products, 6);
 
+  const images = [
+    {
+      original: "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+      thumbnail: "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+    },
+    {
+      original: "https://i.dummyjson.com/data/products/14/thumbnail.jpg",
+      thumbnail: "https://i.dummyjson.com/data/products/14/thumbnail.jpg",
+    },
+    {
+      original: "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
+      thumbnail: "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
+    },
+  ];
+
+
   return (
     <>
       {products && (
-        <div className="flex-container recomendations">
-          <div className="titulo">
-            <h1 className="titulo-font">Podria interesarte...</h1>
+        <>
+          <div className="carousel-container">
+            <ImageGallery
+              items={images}
+              showThumbnails={false}
+              showFullscreenButton={false}
+              showPlayButton={false}
+            />
           </div>
-          {productosSeleccionados.map((product) => {
-            return (
-              <React.Fragment key={product.id}>
-                <ProductCard
-                  id={product.id}
-                  title={product.title}
-                  brand={product.brand}
-                  thumbnail={product.thumbnail}
-                  price={product.price}
-                  discountPercentage={product.discountPercentage}
-                />
-              </React.Fragment>
-            );
-          })}
-        </div>
+          <div className="flex-container recomendations">
+            <div className="titulo">
+              <h1 className="titulo-font">Podria interesarte...</h1>
+            </div>
+            {productosSeleccionados.map((product) => {
+              return (
+                <React.Fragment key={product.id}>
+                  <ProductCard
+                    id={product.id}
+                    title={product.title}
+                    brand={product.brand}
+                    thumbnail={product.thumbnail}
+                    price={product.price}
+                    discountPercentage={product.discountPercentage}
+                  />
+                </React.Fragment>
+              );
+            })}
+          </div>
+        </>
       )}
     </>
   );

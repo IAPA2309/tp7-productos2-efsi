@@ -16,9 +16,20 @@
   margin-bottom: 1em;
   flex: 1 1 100%;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .titulo-font {
   font-weight: 400;
   font-size: 28px;
+}
+
+.carousel-container{
+  margin-top: 10px;
+  width: 100%;
+}
+
+.carousel-container img{
+  height: 250px;
+  border-radius: 12px;
 }
