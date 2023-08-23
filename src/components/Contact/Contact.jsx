@@ -5,9 +5,9 @@ import QuestionAnswerTwoToneIcon from "@mui/icons-material/QuestionAnswerTwoTone
 function Contact() {
   return (
     <div className="form-contact">
-      <form action="/action_page.php" style={{ width: 500 }}>
+      <form action="" style={{ width: 500 }}>
         <div className="form-contact-section">
-          <label for="emailid" className="form-contact-label">
+          <label className="form-contact-label">
             Mail
           </label>
           <input
@@ -18,7 +18,7 @@ function Contact() {
           />
         </div>
         <div className="form-contact-section">
-          <label for="temaid" className="form-contact-label">
+          <label className="form-contact-label">
             Tema
           </label>
           <input
@@ -29,7 +29,7 @@ function Contact() {
           />
         </div>
         <div className="form-contact-section">
-          <label for="problemaid" className="form-contact-label">
+          <label className="form-contact-label">
             Problema
           </label>
           <textarea

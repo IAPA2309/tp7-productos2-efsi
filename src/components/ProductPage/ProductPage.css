@@ -3,26 +3,30 @@
     border: 1px solid #d4d4d4;
     border-radius: 12px;
     width: 700px;
+    height: 70px;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    height: 80px;
     margin: 20px auto;
 }
 
-select{
-    outline: none;
-    border: none;
-    background-color: #fbf8ff;
-    outline: 1px solid #d4d4d4;
-    border-radius: 8px;
-    padding: 10px;
+.filter-filters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-select:hover{
-    cursor: pointer;
+.filter-text{
+    margin-left: 10px; 
+    font-weight: 500; 
+    font-size: 18px;
 }
 
-select:focus{
-    outline: 1px solid black;
+.products-search-flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 8px;
 }
