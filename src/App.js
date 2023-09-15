@@ -8,6 +8,7 @@ import NotFound from "./components/404Error/NotFound";
 import Footer from "./components/Footer/Footer";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Contact from "./components/Contact/Contact";
+import ChartPage from "./components/ChartPage/ChartPage";
 
 function App() {
   const [products, setProducts] = useState([{}]);
@@ -35,6 +36,7 @@ function App() {
             ></Route>
             <Route path="/home" element={<Navigate to="/" />} />
             <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/chart" element={<ChartPage />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Route>
         </Routes>

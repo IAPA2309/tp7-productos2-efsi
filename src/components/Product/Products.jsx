@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Products.css";
 import { Rating, LinearProgress } from "@mui/material";
+import { useCart } from "../../Context/ChartContext";
 
 function Products() {
   const params = useParams();
@@ -30,6 +31,19 @@ function Products() {
   if(!isLoading && productToShow.discountPercentage > 0){
     var valorOriginal = calcularValorOriginal(productToShow.price, productToShow.discountPercentage);
   }
+
+  const { dispatch } = useCart();
+
+  const handleAddToCart = () => {
+    // Crear un objeto de acción para agregar el producto al carrito
+    const action = {
+      type: 'ADD_TO_CART',
+      payload: productToShow, // El producto que se va a agregar
+    };
+
+    // Llamar al dispatch con la acción
+    dispatch(action);
+  };
 
   return (
     <>
@@ -94,7 +108,7 @@ function Products() {
                   {productToShow.stock} disponibles
                 </p>
                 <button className="btn-buy">Comprar</button>
-                <button className="btn-chart">Agregar al carrito</button>
+                <button className="btn-chart" onClick={handleAddToCart}>Agregar al carrito</button>
               </div>
             </div>
           </div>
