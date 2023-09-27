@@ -48,8 +48,6 @@ function ProductPage() {
     }
   }, [selectedCategory]);
 
-  console.log(selectedCategory);
-
   return (
     <div>
       {products === undefined ? (

@@ -1,7 +1,6 @@
 .flex{
     display: flex;
     gap: 20px;
-    padding: 50px;
     flex-direction: column;
 }
 .flex-center{
@@ -18,6 +17,8 @@
 
 .cart-title{
     margin: 20px 20% 10px 20%;
+    /* color: #bfc7d2; */
+    /* color: #808c9c; */
 }
 
 .chart-help{
@@ -53,4 +54,23 @@
 }
 .seeProducts-btn:active{
     transform: scale(.95);
+}
+
+.li-product{
+    text-decoration: none;
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #bfc7d2;
+    border-radius: 12px;
+}
+
+.cart-product-btnDlt{
+    background-color: #f8153f;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }

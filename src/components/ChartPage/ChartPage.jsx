@@ -3,6 +3,7 @@ import { useCart } from '../../Context/ChartContext';
 import { Link } from "react-router-dom";
 import './ChartPage.css'
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import ChartPageProduct from '../ChartPageProduct/ChartPageProduct';
 
 function ChartPage() {
     const { cart, dispatch } = useCart();
@@ -43,11 +44,9 @@ function ChartPage() {
           ) : (
             <ul className="flex">
               {cart.map((product) => (
-                <li key={product.id}>
-                  <span>{product.title}</span>
-                  <span>{product.brand}</span>
-                  <span>${product.price}</span>
-                  <button onClick={() => removeFromCart(product)}>
+                <li key={product.id} className='li-product'>
+                  <ChartPageProduct data={product}/>
+                  <button onClick={() => removeFromCart(product)} className='cart-product-btnDlt'>
                     Eliminar
                   </button>
                 </li>

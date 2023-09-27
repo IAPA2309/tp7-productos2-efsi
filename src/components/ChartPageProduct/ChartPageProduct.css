@@ -1,0 +1,21 @@
+.flex-cart-product{
+    display: flex;
+    align-items: center;
+}
+
+.cart-product-img img{
+    display: block;
+    height: 100px;
+    width: 175px;
+    object-fit: cover !important;
+}
+
+.cart-product-title{
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.cart-product-brand{
+    width: 100%;
+    font-size: 2em;
+}
