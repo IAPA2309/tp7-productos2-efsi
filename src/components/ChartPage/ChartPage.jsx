@@ -18,8 +18,8 @@ function ChartPage() {
     };
   
     return (
-      <div className='cart-container'>
-          <h2 className='cart-title'>Carrito de compras ({cart.length})</h2>
+      <div className="cart-container">
+        <h2 className="cart-title">Carrito de compras ({cart.length})</h2>
         <div className="cart">
           {cart.length === 0 ? (
             <div className="flex flex-center">
@@ -42,16 +42,22 @@ function ChartPage() {
               </div>
             </div>
           ) : (
-            <ul className="flex">
-              {cart.map((product) => (
-                <li key={product.id} className='li-product'>
-                  <ChartPageProduct data={product}/>
-                  <button onClick={() => removeFromCart(product)} className='cart-product-btnDlt'>
-                    Eliminar
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <ul className="flex">
+                {cart.map((product) => (
+                  <li key={product.id} className="li-product flex">
+                    <ChartPageProduct data={product} />
+                    <button
+                      onClick={() => removeFromCart(product)}
+                      className="cart-product-btnDlt"
+                    >
+                      Eliminar
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <button className="cart-product-btnBuy">Comprar</button>
+            </div>
           )}
         </div>
       </div>

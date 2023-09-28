@@ -1,21 +1,25 @@
 .flex-cart-product{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .cart-product-img img{
     display: block;
-    height: 100px;
-    width: 175px;
+    height: 75px;
+    width: 150px;
     object-fit: cover !important;
 }
 
+.cart-product-name{
+    margin-left: 15px;
+}
+
 .cart-product-title{
-    font-weight: 700;
-    font-size: 2em;
+    font-weight: 600;
+    font-size: 1em;
 }
 
 .cart-product-brand{
-    width: 100%;
-    font-size: 2em;
+    font-size: 1em;
 }

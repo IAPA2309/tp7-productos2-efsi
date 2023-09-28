@@ -2,9 +2,16 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import './ProductCard.css'
 import LocalOfferTwoToneIcon from "@mui/icons-material/LocalOfferTwoTone";
-
+import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import { useCart } from "../../Context/ChartContext";
 
 function ProductCard({title, brand, price, thumbnail, discountPercentage, id}) {
+
+  const { cart } = useCart();
+
+  const isProductInCart = (productId) => {
+    return cart.some(item => item.id === productId);
+  };
 
   return (
     <div className="flex-container">
@@ -22,6 +29,13 @@ function ProductCard({title, brand, price, thumbnail, discountPercentage, id}) {
               <h1 style={{ fontWeight: 400 }}>{discountPercentage}%</h1>
               <LocalOfferTwoToneIcon sx={{ fontSize: 21 }} />
             </div>
+              {isProductInCart(id) ? (
+                <div className="isInCart">
+                  <ShoppingCartTwoToneIcon sx={{ fontSize: 21 }} />
+                </div>
+              ) : (
+                <></>
+              )}
           </div>
           <p className="truncate card-title">{title}</p>
           <p className="card-brand">{brand}</p>

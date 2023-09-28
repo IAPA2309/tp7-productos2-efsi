@@ -32,7 +32,7 @@ function Products() {
     var valorOriginal = calcularValorOriginal(productToShow.price, productToShow.discountPercentage);
   }
 
-  const { dispatch } = useCart();
+  const { cart, dispatch } = useCart();
 
   const handleAddToCart = () => {
     // Crear un objeto de acción para agregar el producto al carrito
@@ -44,6 +44,11 @@ function Products() {
     // Llamar al dispatch con la acción
     dispatch(action);
   };
+
+  const isProductInCart = (productId) => {
+    return cart.some(item => item.id === productId);
+  };
+
 
   return (
     <>
@@ -108,7 +113,14 @@ function Products() {
                   {productToShow.stock} disponibles
                 </p>
                 <button className="btn-buy">Comprar</button>
-                <button className="btn-chart" onClick={handleAddToCart}>Agregar al carrito</button>
+                <button className="btn-chart" onClick={handleAddToCart}>
+                  Agregar al carrito
+                </button>
+                {isProductInCart(productToShow.id) ? (
+                  <span>Este producto está en tu carrito</span>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           </div>
