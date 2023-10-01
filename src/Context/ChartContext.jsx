@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext } from 'react';
+import React, { createContext, useReducer, useContext, useEffect } from 'react';
 
 // Definir acciones para el carrito
 const cartActions = {
@@ -29,7 +29,16 @@ const CartContext = createContext();
 
 // Componente proveedor del contexto
 export const CartProvider = ({ children }) => {
-  const [cart, dispatch] = useReducer(cartReducer, []);
+  const [cart, dispatch] = useReducer(cartReducer, [], () => {
+    // Obtener el estado inicial del carrito desde localStorage
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  useEffect(() => {
+    // Guardar el estado actual del carrito en localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <CartContext.Provider value={{ cart, dispatch }}>
@@ -37,6 +46,7 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
 
 // Función de conveniencia para usar el contexto
 export const useCart = () => {
